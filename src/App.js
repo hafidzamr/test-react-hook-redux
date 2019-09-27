@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { StateProvider } from './store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <StateProvider>
+      <Test />
+    </StateProvider>
+  );
+}
+
+function Test() {
+  const Data = useSelector((state) => state.number);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <h1>State = {Data}</h1>
+      <button type="button" onClick={() => dispatch({ type: 'ADD_INCREMENT' })}>
+        Increment State
+      </button>
+      <button type="button" onClick={() => dispatch({ type: 'ADD_DECREMENT' })}>
+        Decrement State
+      </button>
     </div>
   );
 }
