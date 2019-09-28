@@ -10,13 +10,11 @@ function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'ADD_INCREMENT':
       return {
-        ...state,
         number: state.number + 1,
       };
 
     case 'ADD_DECREMENT':
       return {
-        ...state,
         number: state.number - 1,
       };
 
