@@ -50,7 +50,10 @@
         "includeExports": true
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-trailing-spaces": "off",
+    "comma-dangle": "off",
+    "indent": "off"
   },
   "parser": "babel-eslint"
 }
