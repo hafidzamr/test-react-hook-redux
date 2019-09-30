@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StateProvider } from './store';
+import { StateProvider } from './redux/store';
 
 function App() {
   return (
@@ -17,10 +17,10 @@ function Test() {
   return (
     <div>
       <h1>State = {Data}</h1>
-      <button type="button" onClick={() => dispatch({ type: 'ADD_INCREMENT' })}>
+      <button type="button" onClick={() => dispatch({ type: 'ASYNC_INCREMENT' })}>
         Increment State
       </button>
-      <button type="button" onClick={() => dispatch({ type: 'ADD_DECREMENT' })}>
+      <button type="button" onClick={() => dispatch({ type: 'ASYNC_DECREMENT' })}>
         Decrement State
       </button>
     </div>
